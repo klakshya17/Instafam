@@ -11,9 +11,9 @@ const requireLogin = require("../middleware/requireLogin")
 //   res.send("hello")
 // })
 
-router.get("/protected", requireLogin, (req, res) => {
-  res.send("Hello User")
-})
+// router.get("/protected", requireLogin, (req, res) => {
+//   res.send("Hello User")
+// })
 
 router.post("/signup", (req, res) => {
   //   console.log(req.body.name)
