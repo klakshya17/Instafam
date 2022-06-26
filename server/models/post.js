@@ -5,14 +5,13 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  email: {
+  body: {
     type: String,
     required: true,
   },
   photo: {
     type: String,
     required: true,
-    default: "no photo",
   },
   postedBy: {
     type: ObjectId,

@@ -55,7 +55,7 @@ router.post("/signin", (req, res) => {
   if (!email || !password) {
     res.status(422).json({ error: "Please add email or password" })
   }
-  User.findOne({ email: email }).them((savedUser) => {
+  User.findOne({ email: email }).then((savedUser) => {
     if (!savedUser) {
       res.status(422).json({ error: "Invalid email or password" })
     }
@@ -65,7 +65,8 @@ router.post("/signin", (req, res) => {
         if (doMatch) {
           //   res.json({ message: "Signed in successfully" })
           const token = jwt.sign({ _id: savedUser.id }, JWT_SECRET)
-          res.json({ token })
+          const { _id, name, email } = savedUser
+          res.json({ token, user: { _id, name, email } })
         } else {
           res.status(422).json({ error: "Invalid email or password" })
         }

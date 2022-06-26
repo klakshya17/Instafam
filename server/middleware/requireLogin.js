@@ -8,14 +8,14 @@ module.exports = (req, res, next) => {
   if (!authorization) {
     res.status(401).json({ error: "You must be logged in" })
   }
-  authorization.replace("Bearer ", "")
+  const token = authorization.replace("Bearer ", "")
   jwt.verify(token, JWT_SECRET, (err, payload) => {
     if (err) {
-      return req.status(401).json({ error: "You must be logged in" })
+      return res.status(401).json({ error: "You must be logged in hehe" })
     }
-    const { _id } = payload.id
+    const { _id } = payload
     User.findById(_id).then((userData) => {
-      req.user = userdata
+      req.user = userData
       next()
     })
   })
