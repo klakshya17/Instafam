@@ -1,15 +1,17 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { Link, useHistory } from "react-router-dom"
+import { UserContext } from "../App"
 import M from "materialize-css"
 
 const Signin = () => {
+  const { state, dispatch } = useContext(UserContext)
   const history = useHistory()
   const [password, setPassword] = useState("")
   const [email, setEmail] = useState("")
 
   const PostData = () => {
     if (
-      !/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      !/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
         email
       )
     ) {
@@ -34,6 +36,7 @@ const Signin = () => {
         } else {
           localStorage.setItem("jwt", data.token)
           localStorage.setItem("user", JSON.stringify(data.user))
+          dispatch({ type: "USER", payload: data.user })
           M.toast({
             html: "signed in successfully",
             classes: "#43a047 green darken-2",
@@ -57,7 +60,7 @@ const Signin = () => {
           onChange={(e) => setEmail(e.target.value)}
         />
         <input
-          type='text'
+          type='password'
           placeholder='password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}

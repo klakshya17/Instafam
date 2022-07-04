@@ -1,37 +1,62 @@
-import React from "react"
+import React, { useEffect, createContext, useReducer, useContext } from "react"
 import "./App.css"
 import Navbar from "./components/Navbar"
-import { BrowserRouter, Route } from "react-router-dom"
+import { BrowserRouter, Route, Switch, useHistory } from "react-router-dom"
 import Home from "./screens/Home"
 import Login from "./screens/Signin"
 import Profile from "./screens/Profile"
 import Signup from "./screens/Signup"
 import CreatePost from "./screens/createPost"
+import { initialState, reducer } from "./reducers/userReducer"
+
+export const UserContext = createContext()
+
+const Routing = () => {
+  const history = useHistory()
+  const { state, dispatch } = useContext(UserContext)
+  useEffect(() => {
+    const user = JSON.parse(localStorage.getItem("user"))
+    if (user) {
+      dispatch({ type: "USER", payload: user })
+      history.push("./")
+    } else {
+      history.push("./signin")
+    }
+  }, [])
+  return (
+    <Switch>
+      <Route exact path='/'>
+        <Home />
+      </Route>
+
+      <Route exact path='/signup'>
+        <Signup />
+      </Route>
+
+      <Route exact path='/signin'>
+        <Login />
+      </Route>
+
+      <Route exact path='/profile'>
+        <Profile />
+      </Route>
+      <Route exact path='/create'>
+        <CreatePost />
+      </Route>
+    </Switch>
+  )
+}
 
 function App() {
+  const [state, dispatch] = useReducer(reducer, initialState)
   return (
     <div>
-      <BrowserRouter>
-        <Navbar />
-        <Route exact path='/'>
-          <Home />
-        </Route>
-
-        <Route exact path='/signup'>
-          <Signup />
-        </Route>
-
-        <Route exact path='/signin'>
-          <Login />
-        </Route>
-
-        <Route exact path='/profile'>
-          <Profile />
-        </Route>
-        <Route exact path='/create'>
-          <CreatePost />
-        </Route>
-      </BrowserRouter>
+      <UserContext.Provider value={{ state, dispatch }}>
+        <BrowserRouter>
+          <Navbar />
+          <Routing />
+        </BrowserRouter>
+      </UserContext.Provider>
     </div>
   )
 }
