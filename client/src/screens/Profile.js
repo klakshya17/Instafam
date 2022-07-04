@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react"
 import { UserContext } from "../App"
 const Profile = () => {
   const [mypics, setPics] = useState([])
-  const { state, dispatch } = UserContext
+  const { state, dispatch } = useContext(UserContext)
   useEffect(() => {
     fetch("./mypost", {
       headers: {
@@ -11,7 +11,7 @@ const Profile = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result)
+        console.log()
         setPics(result.mypost)
       })
   }, [])
