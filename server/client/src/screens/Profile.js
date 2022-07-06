@@ -5,8 +5,6 @@ const Profile = () => {
   const [mypics, setPics] = useState([])
   const { state, dispatch } = useContext(UserContext)
   const [image, setImage] = useState("")
-  console.log(state)
-  console.log(localStorage.getItem("user"))
   useEffect(() => {
     fetch("/mypost", {
       headers: {
@@ -15,7 +13,7 @@ const Profile = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result)
+        // console.log(result)
         setPics(result.mypost)
       })
   }, [])
