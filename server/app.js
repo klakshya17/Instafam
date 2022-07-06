@@ -19,6 +19,7 @@ require("./models/post")
 app.use(express.json())
 app.use(require("./routes/auth.js"))
 app.use(require("./routes/post.js"))
+app.use(require("./routes/user.js"))
 
 const customMiddleware = (req, res, next) => {
   console.log("middleware executed!")
