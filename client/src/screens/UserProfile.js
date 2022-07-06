@@ -119,9 +119,9 @@ const Profile = () => {
                   width: "108%",
                 }}
               >
-                {/* <h6>{userProfile.posts.length} posts</h6> */}
-                {/* <h6>{userProfile.user.followers.length} followers</h6>
-                <h6>{userProfile.user.following.length} following</h6> */}
+                <h6>{userProfile.posts.length} posts</h6>
+                <h6>{userProfile.user.followers.length} followers</h6>
+                <h6>{userProfile.user.following.length} following</h6>
               </div>
               {showfollow ? (
                 <button

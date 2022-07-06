@@ -5,6 +5,8 @@ const Profile = () => {
   const [mypics, setPics] = useState([])
   const { state, dispatch } = useContext(UserContext)
   const [image, setImage] = useState("")
+  console.log(state)
+  console.log(localStorage.getItem("user"))
   useEffect(() => {
     fetch("/mypost", {
       headers: {
@@ -41,7 +43,7 @@ const Profile = () => {
           })
             .then((res) => res.json())
             .then((result) => {
-              console.log(result)
+              // console.log(result)
               localStorage.setItem(
                 "user",
                 JSON.stringify({ ...state, pic: result.pic })
@@ -89,8 +91,8 @@ const Profile = () => {
               }}
             >
               <h6>{mypics.length} posts</h6>
-              {/* <h6>{state ? state.followers.length : "0"} followers</h6>
-              <h6>{state ? state.following.length : "0"} following</h6> */}
+              <h6>{state ? state.followers.length : "0"} followers</h6>
+              <h6>{state ? state.following.length : "0"} following</h6>
             </div>
           </div>
         </div>
