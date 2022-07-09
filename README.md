@@ -82,7 +82,7 @@ Shows all the posts posted by those users which are followed by logged in user.
 1. Clone the repo
 
    ```sh
-   git clone https://github.com/klakshya170
+   git clone https://github.com/klakshya170/Sociofam
    ```
 2. Install NPM packages in server 
 
@@ -102,7 +102,7 @@ Shows all the posts posted by those users which are followed by logged in user.
 1. Clone the repo
 
    ```sh
-   git clone https://github.com/tend2infinity/Instafam-Backend
+   git clone https://github.com/klakshya170/Sociofam
    ```
 2. Install NPM packages
 
