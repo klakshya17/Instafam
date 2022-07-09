@@ -52,9 +52,11 @@ There is a basic landing page that is my Login page , you can always navigate to
 ### Home page 
 After logging in you will see a home screen and you can view all the posts there .<br>
 ![image](https://user-images.githubusercontent.com/56078582/178119954-8889236f-197c-48b0-8340-c643c79a77e7.png)
+![image](https://user-images.githubusercontent.com/56078582/178120416-cd037eb2-3c65-485c-98b7-cfde75bcec33.png)
 ### Navbar
 The navbar at the top contains a home icon and other options like create post , my following posts , my profile , all of these are pretty much self explanatory.<br>
 ![image](https://user-images.githubusercontent.com/56078582/178119966-3860eaa1-efbe-4f90-a6bb-0d01fb1b8f0f.png)
+![image](https://user-images.githubusercontent.com/56078582/178120435-29279800-8c90-4b97-9396-bc3fa838c6c9.png)
 ### Post
 Each Post contains a header which includes name of the person who posted that, caption, text body, picture, like button and the comment section. The posts posted by a logged-in user also includes a delete button to delete that. All the comments posted by a logged in user also possess the delete button. The image URL for the posts are returned from the cloudinary API.<br>
 ![image](https://user-images.githubusercontent.com/56078582/178120247-c7e2188b-1278-4c82-be79-f6352ebdecf1.png)
@@ -65,10 +67,10 @@ The profile contains information about the user's username, Email, followers, fo
 Contains all the information as on the Profile page and the button to follow or unfollow.<br>
 ![image](https://user-images.githubusercontent.com/56078582/178120198-63b576ea-9568-49c0-b72d-3941593590e5.png)
 ### Search Feature
-You can search the users using their email IDs.
+You can search the users using their email IDs.<br>
 ![image](https://user-images.githubusercontent.com/56078582/178120227-70214225-1c7a-49a6-91d8-66faf8aec480.png)
 ### Create Post
-The interface to create a Post!
+The interface to create a Post!<br>
 ![image](https://user-images.githubusercontent.com/56078582/178120150-16e7a32d-14a3-4208-9092-f30ab6964cd8.png)
 ### My following Tab
 Shows all the posts posted by those users which are followed by logged in user.
