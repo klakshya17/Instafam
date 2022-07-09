@@ -147,7 +147,7 @@ const Home = () => {
             <div className='card-image'>
               <img src={item.photo} />
             </div>
-            <div className='card-content'>
+            <div className='card-content' style={{ padding: "18px 6px" }}>
               <i className='material-icons' style={{ color: "red" }}>
                 favorite
               </i>
@@ -170,10 +170,9 @@ const Home = () => {
                   thumb_up
                 </i>
               )}
-
               <h6>{item.likes.length} likes</h6>
-              <h6>{item.title}</h6>
-              <p>{item.body}</p>
+              <h6 style={{ fontWeight: "500" }}>{item.title}</h6>
+              <p style={{ fontWeight: "600" }}>{item.body}</p>
               {item.comments.map((record) => {
                 return (
                   <h6 key={record._id}>

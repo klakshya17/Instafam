@@ -6,10 +6,16 @@ const NavBar = () => {
   const searchModal = useRef(null)
   const [search, setSearch] = useState("")
   const [userDetails, setUserDetails] = useState([])
+  const [clicked, setClick] = useState(false)
   const { state, dispatch } = useContext(UserContext)
   const history = useHistory()
+
   useEffect(() => {
     M.Modal.init(searchModal.current)
+    const width = window.innerWidth
+    if (width > 420) {
+      setClick(true)
+    }
   }, [])
   const renderList = () => {
     if (state) {
@@ -30,7 +36,7 @@ const NavBar = () => {
           <Link to='/create'>Create Post</Link>
         </li>,
         <li key='4'>
-          <Link to='/myfollowingpost'>My following Posts</Link>
+          <Link to='/myfollowingpost'>My Following Posts</Link>
         </li>,
         <li key='5'>
           <button
@@ -73,13 +79,45 @@ const NavBar = () => {
         setUserDetails(results.user)
       })
   }
+  const hamburg = (event) => {
+    setClick(!clicked)
+  }
+  const abc = () => {
+    if (clicked)
+      return [
+        <i
+          key={2}
+          className='large material-icons'
+          style={{
+            color: "black",
+            fontSize: "40px",
+            position: "absolute",
+            right: "67px",
+          }}
+        >
+          clear
+        </i>,
+      ]
+    else
+      return [
+        <div key={1}>
+          <div className='ham'></div>
+          <div className='ham'></div>
+          <div className='ham'></div>
+        </div>,
+      ]
+  }
   return (
-    <nav>
+    <nav className='navbar'>
       <div className='nav-wrapper white'>
         <Link to={state ? "/" : "/signin"} className='brand-logo left'>
-          Instagram
+          Sociofam
         </Link>
-        <ul id='nav-mobile' className='right'>
+        <ul
+          id='nav-mobile'
+          className='right'
+          style={{ visibility: clicked ? "visible" : "hidden" }}
+        >
           {renderList()}
         </ul>
       </div>
@@ -122,6 +160,9 @@ const NavBar = () => {
             close
           </button>
         </div>
+      </div>
+      <div className='hamburger' onClick={hamburg}>
+        {abc()}
       </div>
     </nav>
   )

@@ -2,12 +2,8 @@
 a{
   color:black !important
 }
-
 .brand-logo{
   font-family: 'Grand Hotel', cursive;
-}
-nav{
-  background-color: white;
 }
 .auth-card{
   padding: 20px;
@@ -40,4 +36,50 @@ nav{
   margin: 20px auto;
   padding: 10px;
   border-radius: 10px;
+}
+i:hover{
+  cursor: pointer;
+}
+@media (min-width: 420px){
+.hamburger{
+  visibility: hidden;
+}
+#nav-mobile{
+  visibility: visible;
+}
+}
+@media (max-width: 420px) {
+  #nav-mobile{
+    visibility: hidden;
+    translate: 200px;
+    z-index: 1000;
+    position: absolute;
+    right:00px;
+    top: 55.5px;
+    display: flex;
+    /* border: red solid 2px; */
+    flex-direction: column;
+    background-color: white ;
+    align-items:center;
+    height:900px;
+    width:230px;
+    padding-top: 30px;
+    transition: translateX(250px) 2s;
+  }
+  .home-card{
+    border-radius: 20px;
+  }
+  .hamburger{
+    /* background-color: red; */
+    position: absolute;
+    right:25px;
+    top:12px;
+  }
+  .ham{
+    background-color: black; 
+    width: 30px;
+    height: 4px;
+    border-radius: 5px;
+    margin:4px;
+  }
 }
