@@ -1,5 +1,5 @@
 # [Sociofam](https://sociofam-app.herokuapp.com/) 
-A full stack social media web application in which you can actually post pictures, like posts, comment upon it, follow people and maintain a healthy social network!
+A full stack social media web application in which you can actually post pictures, like posts, comment upon it, follow people and maintain a healthy social network!<br>
 ![image](https://user-images.githubusercontent.com/56078582/178120416-cd037eb2-3c65-485c-98b7-cfde75bcec33.png)
 
 ### 🔗 Live Demo
