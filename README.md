@@ -1,5 +1,6 @@
 # [Sociofam](https://sociofam-app.herokuapp.com/) 
 A full stack social media web application in which you can actually post pictures, like posts, comment upon it, follow people and maintain a healthy social network!
+![image](https://user-images.githubusercontent.com/56078582/178119977-c8f38369-5f84-4d7c-b2ce-03cdf4c32572.png)
 
 ### 🔗 Live Demo
 The hosted website can be found [here](https://sociofam-app.herokuapp.com/) 
@@ -48,7 +49,6 @@ Cloudinary is a cloud based media storage and optimisation service. I have used 
 ### SignIn and SignUp pages 
 There is a basic landing page that is my Login page , you can always navigate to the signup screen from here. <br>
 ![image](https://user-images.githubusercontent.com/56078582/178120078-25bb6595-458c-4a84-8044-ed5bc85704e8.png)
-![image](https://user-images.githubusercontent.com/56078582/178119977-c8f38369-5f84-4d7c-b2ce-03cdf4c32572.png)
 ### Home page 
 After logging in you will see a home screen and you can view all the posts there .<br>
 ![image](https://user-images.githubusercontent.com/56078582/178119954-8889236f-197c-48b0-8340-c643c79a77e7.png)
